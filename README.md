@@ -33,7 +33,7 @@ Aqui será postados meus desafios do bootcamp LaunchBase
 ## 🤔 O que é LaunchBase?
 
 - O LaunchBase é um treinamento no formato de bootcamp online que tem duração de 8 semanas;
-- Criado pela <a href="https://rocketseat.com.br/" target="_blank">Rocketseat💜
+- Criado pela <a href="https://rocketseat.com.br/">Rocketseat💜
 </h3>
 
 
