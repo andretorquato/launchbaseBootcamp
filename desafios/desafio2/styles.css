@@ -4,8 +4,12 @@
     padding: 0;
     border: 0;
 }
+:root{
+    --color--one:#451c91;
+    --color-two:#1a0147;
+}
 body {
-    background: linear-gradient(to right, #396afc, #2948ff);
+    background: linear-gradient(to right, var(--color--one), var(--color-two));
     font-family: 'Roboto', sans-serif;
     color: white;
 }
@@ -17,9 +21,9 @@ body {
     background-color: white
 }
 .links a{
-    color: #2948ff;
+    color: var(--color--one);
     text-decoration: none;
-    font-size: 30px;
+    font-size: 2    0px;
     padding: 0 10px 0 10px;
     padding-right: 10px;
     padding-left: 10px;
@@ -40,7 +44,7 @@ body {
     padding: 50px;
     background-color: white;
     max-width: 800px;
-    color: #2948ff;
+    color: var(--color--one);
     border-radius: 40px 0 40px 0;
 }
 .wrapper .img-about{
@@ -61,7 +65,7 @@ body {
 }
 .wrapper p.text.bold{
     margin-top: 20px;
-    color: #396afc;
+    color: var(--color-two);
     font-size: 20px;
     font-weight:bold;
 }
@@ -193,3 +197,55 @@ align-items: center;
     color: #59ff00;
 }
 
+.modal-overlay{
+    background: rgba(0, 0, 0, 0.700);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    visibility: visible;
+    opacity: 1;
+}
+.modal{
+    background: white;
+    width: 90%;
+    height: 90%;
+    margin: 5vh auto;
+    position: relative;
+}
+.close-modal{
+    color:red;
+    position: absolute;
+    top:8px;
+    right: 8px;
+    cursor: pointer;
+}
+.maximize-modal{
+    font-size: 15px;
+    color: black;
+    position: absolute;
+    top:15px;
+    right: 30px;
+    cursor: pointer;
+}
+.modal-content iframe{
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    margin: 30px auto;
+}
+/* === MODAL AND CARD IMAGES HIDE ===  */
+.cards.hide,
+.modal-overlay.hide{
+    visibility: hidden;
+    opacity:0;
+}
+
+/* === MODAL MAXIMIZE === */
+
+.modal.maximize{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin:auto;
+}
