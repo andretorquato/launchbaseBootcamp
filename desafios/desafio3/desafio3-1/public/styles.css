@@ -101,7 +101,7 @@ body {
 }
 .cards{
     
-    width: 600px;
+    max-width: 800px;
     height: 350px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -116,11 +116,13 @@ body {
     width: 100%;
     height: 100%;
     background: #530e8f;
-    clip-path: circle(100px at 80% 20%);
+    clip-path: circle(150px at 80% 20%);
     transition: 0.5s ease-in-out;
+    border-radius: 20px;
 }
 .cards .card:hover:before{
-    clip-path: circle(200px at 80% -20%);
+    clip-path: circle(300px at 80% -20%);
+    border-radius: 20px;
 }
 .cards .card::after{
     content: "Rocketseat";
@@ -131,6 +133,7 @@ body {
     font-weight: 600;
     font-style: italic;
     color: rgba(255,255,255,0.04);
+    border-radius: 20px;
 }
 
 .card{
@@ -152,6 +155,7 @@ body {
 .card-image:hover{
     top:0;
     transform: translateY(0%);
+    
 }
 .card-image img{
     position: absolute;
@@ -170,7 +174,7 @@ body {
     
     display: grid;
     grid-template-columns: 1fr 1fr;
-    
+    align-items: center;
     
 }
 

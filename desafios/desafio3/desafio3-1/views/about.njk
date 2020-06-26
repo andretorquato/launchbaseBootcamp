@@ -2,25 +2,26 @@
 {% block head %}
 <title>About - desafio 3.1</title>
 {% endblock head %}
+
 {% block content %}
 
 <header>
     <div class="wrapper">
         <img class="img-about" src="https://cdn-images-1.medium.com/max/1200/1*TkXVfLTwsHdwpUEjGzdi9w.jpeg" alt="Rocketseat">
-        <h1 class="title-about">Rocketseat</h1>
-        <p class="text bold">As melhores tecnologias em programação, direto ao ponto e do jeito certo.</p>
-        <p>No meio de tanta informação e da quantidade de ferramentas que surgem todos os dias, você precisa de alguém que te leve na direção certa.</p>
+        <h1 class="title-about">{{data.title}}</h1>
+        <p class="text bold">{{data.descriptionOne}}</p>
+        <p>{{data.descriptionTwo}}</p>
         <ul class="techs">
-            <h4>Principais tecnologias</h4>
-            <li>ReactJS</li>
-            <li>NodeJs</li>
-            <li>React Native</li>
+            <h4>{{data.titleTechs}}</h4>
+            {% for tech in data.techs %}
+                <li>{{tech}}</li>
+            {% endfor %}
+            
         </ul>
         <div id="social-media">
-            <a href="https://github.com/AndreTorquato" alt="github">Github</a>
-            <a href="https://www.linkedin.com/in/andretorquatoo/" alt="linkedin">Linkedin</a>
-            <a href="https://www.instagram.com/andretorquatoo/" alt="instagram">Instragram</a>
-            <a href="/" alt="instagram">Home</a>
+            {% for social in data.social %}
+            <a href="{{social.link}}" alt="{{social.name}}">{{social.name}}</a>
+             {% endfor %}
         </div>
 
     </div>

@@ -2,6 +2,7 @@ const express = require('express')
 const nunjucks = require('nunjucks')
 
 const server = express()
+const data = require("./data")
 // use files statics 
 server.use(express.static('public'))
 
@@ -9,19 +10,20 @@ server.use(express.static('public'))
 server.set('view engine', 'njk')
 
 nunjucks.configure('views',{
-    express:server
+    express:server,
+    autoescape:false
 })
 // makes routes
 server.get('/',function(req, res){
-    res.render('about')
+    res.render('about', {data})
 })
 server.get('/contents',function(req, res){
-    res.render('contents')
+    res.render('contents', {data})
 })
 server.use(function(req, res){
     res.status(404).render("not-found")
 })
 // starting server
 server.listen(5000, function(){
-
+    
 })
