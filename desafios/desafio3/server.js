@@ -20,6 +20,17 @@ server.get('/',function(req, res){
 server.get('/contents',function(req, res){
     res.render('contents', {data})
 })
+server.get('/contents/:id',function(req, res){
+    const id = req.params.id
+    const courses = data.cards.find(function(course){
+        return course.id == id
+    })
+    if(!courses){
+       return res.send('Page not found')
+    }
+    
+    return res.render('content', {courses})
+})
 server.use(function(req, res){
     res.status(404).render("not-found")
 })
