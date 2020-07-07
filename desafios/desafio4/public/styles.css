@@ -8,6 +8,7 @@
     --color--one:#451c91;
     --color-two:#1a0147;
     --color-white: #FFF;
+    --card-color:#451c91c0;
 }
 body {
     background: linear-gradient(to right, var(--color--one), var(--color-two));
@@ -50,4 +51,78 @@ body {
 .links a:hover span::after{
     opacity: 1;
     right: 0;
+}
+
+/* === CARD ===  */
+
+.card{
+    width: 800px;
+    min-height: 400px;
+    background-color:var(--color-white);
+    margin: 0 auto;
+    margin-top: 24px;
+    color:var(--color-two);
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+    box-shadow: 4px 0 16px 8px rgba(0, 0, 0, 0.7);
+    
+    animation: issue 700ms ease-in-out;
+}
+
+@keyframes issue{
+    from{
+        opacity: 0;
+        transform: translateX(20%)
+        
+    }
+    to{
+        opacity: 1;
+    }
+}
+.details{
+    padding: 24px;
+}
+
+.details .item{
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 8px 16px;
+}
+.details h3,
+.details .item div:first-child{
+    color:#777;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    line-height: 28px;
+}
+.details .item div:nth-child(2){
+    color:var(--card-color);
+    font-size: 18px;
+}
+.details h3{
+    text-transform: uppercase;
+    font-size: 24px;
+    color: var(--card-color);
+    padding-left: 10px;
+}
+
+.details .item span{
+    background-color: #2dd63b; 
+    text-transform: uppercase;
+    margin-right: 10px;
+}
+.details .item label{
+    background-color:#1cd2eb;
+    letter-spacing: 0.5px;
+}
+
+.details .item span,
+.details .item label{
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 4px;
+    display: inline-block;
+    color: var(--color-white);
+    box-shadow: 3px 2px 5px var(--color-two);
 }
