@@ -13,6 +13,7 @@ server.set('view engine', 'njk')
 nunjucks.configure('views',{
     express:server,
     autoescape:false,
+    watch:true,
     noCache: true
 })
 // message error page not found 
@@ -20,6 +21,6 @@ server.use(function(req, res){
     res.status(404).render("not-found")
 })
 // starting server
-server.listen(3000, function(){
+server.listen(5000, function(){
     
 })
