@@ -1,0 +1,24 @@
+{
+  "teachers": [
+    {
+      "id": 1,
+      "avatar_url": "https://www.google.com",
+      "name": "André Torquato Silva",
+      "birth": 1594166400000,
+      "educationLevel": "Ensino Médio Completo",
+      "typeClass": "presential",
+      "services": "Manufatura, Mesquinho",
+      "created_at": 1594411700446
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://www.google.com",
+      "name": "André Torquato Silva",
+      "birth": 1594166400000,
+      "educationLevel": "Ensino Médio Completo",
+      "typeClass": "presential",
+      "services": "Manufatura, Mesquinho",
+      "created_at": 1594411815525
+    }
+  ]
+}

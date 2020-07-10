@@ -126,3 +126,38 @@ body {
     color: var(--color-white);
     box-shadow: 3px 2px 5px var(--color-two);
 }
+/* == FORM ===  */
+.item select,
+.item input{
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+    color: var(--color-two);
+}
+
+.item select{
+    text-transform: uppercase;
+}
+
+.item input[type="radio"]{
+    width: initial;
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+.details button[type="submit"]{
+    width: 100%;
+    padding: 8px 28px;
+    background-color: var(--color--one);
+    font-weight: bold;
+    color: white;
+    border-radius: 8px;
+    margin-top: 12px;
+    box-shadow: 10px 3px 4px rgba(50, 79, 243, 0.589);
+
+}
+.details button[type="submit"]:hover{
+    box-shadow: 1px 3px 4px rgba(50, 79, 243, 0.589);
+    transition: 0.3s;
+}

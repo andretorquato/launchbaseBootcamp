@@ -5,8 +5,11 @@ const server = express()
 const routes = require('./routes')
 
 // use files statics 
+server.use(express.urlencoded({extended:true}))
 server.use(express.static('public'))
 server.use(routes)
+
+
 // configure template engine
 server.set('view engine', 'njk')
 
@@ -21,6 +24,6 @@ server.use(function(req, res){
     res.status(404).render("not-found")
 })
 // starting server
-server.listen(5000, function(){
+server.listen(3000, function(){
     
 })
