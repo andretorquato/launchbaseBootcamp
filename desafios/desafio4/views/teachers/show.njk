@@ -3,35 +3,38 @@
 {% block content %}
 
     <div class="card">
-            <section class="avatar" style="background: url(https://source.unsplash.com/collection/10552289/500) no-repeat center center / cover"></section>
+            <section class="avatar" style="background: url({{teacher.avatar_url}}) no-repeat center center / cover"></section>
         <section class="details">
             <h3>Detalhes</h3>
             <div class="item">
                 <div>Professor:</div>
-                <div>André Torquato</div>
+                <div>{{teacher.name}}</div>
             </div>
             <div class="item">
                 <div>Idade:</div>
-                <div>18</div>
+                <div>{{teacher.age}}</div>
             </div>
             <div class="item">
                 <div>Grau de Escolaridade:</div>
-                <div>Doutorado</div>
+                <div>{{teacher.graduation}}</div>
             </div>
             <div class="item">
                 <div>Tipo de aula:</div>
-                <div><span>A DISTANCIA</span></div>
+                <div><span>{{ "Presencial" if teacher.typeClass == "presencial" else "A DISTÂNCIA"}}</span></div>
             </div>
             <div class="item">
                 <div>Acompanhamento:</div>
                 <div>
-                    <span>Matematica</span>
-                    <span>Fisica</span>
+                    {% for teacher in teacher.services %}
+                    <span>{{teacher}}</span>
+                    {% endfor %}
                 </div>
             </div>
             <div class="item">
                 <div>Desde:</div>
-                <div><label>07/07/2020</label></div>
+                <div><label>{{teacher.created_at}}</label></div>
             </div>
+
+            <a href="/teachers/{{teacher.id}}/edit" class="button">Editar</a>
     </section>
 {% endblock content %}

@@ -145,7 +145,7 @@ body {
     margin-right: 4px;
     cursor: pointer;
 }
-
+a.button,
 .details button[type="submit"]{
     width: 100%;
     padding: 8px 28px;
@@ -157,7 +157,15 @@ body {
     box-shadow: 10px 3px 4px rgba(50, 79, 243, 0.589);
 
 }
+a.button:hover,
 .details button[type="submit"]:hover{
     box-shadow: 1px 3px 4px rgba(50, 79, 243, 0.589);
     transition: 0.3s;
+}
+
+a.button{
+    display: block;
+    text-align: center;
+    box-sizing: border-box;
+    text-decoration: none;
 }
