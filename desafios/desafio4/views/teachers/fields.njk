@@ -4,6 +4,7 @@
                 type="url"
                 name="avatar_url"
                 placeholder="https://"
+                value="{{teacher.avatar_url}}"
                  >
             </div>
             <div class="item">
@@ -12,6 +13,7 @@
                 type="text" 
                 name="name" 
                 placeholder="Nome do Professor"
+                value="{{teacher.name}}"
                 >
             </div>
             <div class="item">
@@ -19,21 +21,64 @@
                 <input 
                 type="date" 
                 name="birth"
+                value="{{teacher.birth}}"
                 >
             </div>
             <div class="item">
                 <div>Grau de Escolaridade</div>
                 <select name="graduation">
-                    <option value="medio" selected>Ensino Médio Completo</option>
-                    <option value="superior">Ensino Superior Completo</option>
-                    <option value="mestrado">Mestrado</option>
-                    <option value="doutorado">Doutorado</option>
+                    <option 
+                        value="medio" 
+                        {% if teacher.graduation == "medio" %}
+                        selected
+                        {% endif %}
+                    >Ensino Médio Completo
+                    </option>
+                    <option 
+                        value="superior"
+                        {% if teacher.graduation == "superior" %}
+                        selected
+                        {% endif %}
+                    >Ensino Superior Completo
+                    </option>
+                    <option 
+                        value="mestrado"
+                        {% if teacher.graduation == "mestrado" %}
+                        selected
+                        {% endif %}
+                    >Mestrado
+                    </option>
+                    <option 
+                        value="doutorado"
+                        {% if teacher.graduation == "doutorado" %}
+                        selected
+                        {% endif %}
+                    >Doutorado
+                    </option>
                 </select>
             </div>
             <div class="item">
                 <div>Tipo de aula:</div>
-                <span><input type="radio" name="typeClass" value="presencial" checked>PRESENCIAL</span>
-                <span><input type="radio" name="typeClass" value="distancia">A DISTÂNCIA</span>
+                <span>
+                    <input 
+                    type="radio"
+                    name="typeClass" 
+                    value="presencial"
+                    {% if teacher.typeClass == "presencial"%}
+                    checked
+                    {% endif %}
+                     >PRESENCIAL
+                </span>
+                <span>
+                    <input 
+                    type="radio" 
+                    name="typeClass" 
+                    value="distancia"
+                    {% if teacher.typeClass == "distancia" %}
+                    checked
+                    {% endif %}
+                    >A DISTÂNCIA
+                </span>
                 
             </div>
             <div class="item">
@@ -42,6 +87,7 @@
                 type="text"
                 name="services"
                 placeholder="Materias lecionadas"
+                value="{{teacher.services}}"
                 >
             </div>
            <button type="submit">Salvar</button>
