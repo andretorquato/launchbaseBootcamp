@@ -169,3 +169,12 @@ a.button{
     box-sizing: border-box;
     text-decoration: none;
 }
+
+button[type="submit"].submit_button{
+    width: 49%;
+    float: left;
+}
+#form_delete button[type="submit"]{
+    background-color: red;
+    float:right;
+}

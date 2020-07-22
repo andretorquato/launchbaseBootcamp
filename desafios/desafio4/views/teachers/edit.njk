@@ -2,13 +2,21 @@
 
 {% block content %}
 
-    <div class="card">
-            <section class="avatar" style="background: url(https://source.unsplash.com/collection/10552289/500) no-repeat center center / cover"></section>
-    
-    <form method ="POST"  action ="/teachers" class="details">
-            <h3>EDIÇÃO DE PROFESSORES</h3>
-            
-            {% include 'teachers/fields.njk' %}
+        <div class="card">
+                <section class="avatar" style="background: url(https://source.unsplash.com/collection/10552289/500) no-repeat center center / cover"></section>
+                <section class="details">
+                 <form method="POST" action="/teachers?_method=PUT">
+                        <h3>EDIÇÃO DE PROFESSORES</h3>
 
-    </form>
-{% endblock content %}
+                        {% include 'teachers/fields.njk' %}
+
+                        <input type="hidden" name="id" value="{{teacher.id}}">
+                </form>
+
+                <form id="form_delete" action="/teachers?_method=DELETE" method="post">
+                        <input type="hidden" name="id" value="{{teacher.id}}">
+                        <button class="submit_button" type="submit">DELETAR</button>
+                </form>
+                </section>
+                
+        {% endblock content %}
