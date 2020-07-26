@@ -178,3 +178,68 @@ button[type="submit"].submit_button{
     background-color: red;
     float:right;
 }
+/* === TABLE === */
+
+.table-container{
+    display: grid;
+    grid-template-columns: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+}
+.table-container table{
+    border-spacing: 0;
+}
+.table-container thead tr th{
+    text-align: left;
+}
+th,td{
+    padding: 16px;
+    border-bottom: 1px solid #d9d9d9;
+}
+thead tr th{
+    color:var(--color-two);
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.table-container tbody tr:last-child td{
+    border-bottom: none;
+}
+tbody tr td:first-child{
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    align-items: center;
+}
+tbody tr td:first-child span{
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 5px 1px 10px -4px black;
+    border: 2px solid white;
+}
+tbody tr td:last-child a{
+    background-color: var(--color-two);
+    padding: 8px 16px;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+thead tr th:last-child,
+tbody tr td:last-child
+{
+    text-align: center;
+}
+tbody tr td:nth-child(2) span{
+    padding: 4px 8px;
+    background-color: var(--color--one);
+    color: var(--color-white);
+    border-radius: 16px;
+    margin-top: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-sizing: border-box;
+}

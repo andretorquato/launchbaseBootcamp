@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <div class="card">
+    <div class="card table-container">
         <table>
             <thead>
                 <tr>
@@ -15,11 +15,17 @@
                     {% for teacher in teachers %}
                     <tr>
                         <td>
-                            <span style="backgroud-image:url({{teacher.avatar_url}})"></span>
+                            <span style="background-image:url({{teacher.avatar_url}})"></span>
                             {{teacher.name}}
                         </td>
-                        <td>{{teacher.services}}</td>
+                        <td>
+                            {% for service in teacher.services %}
+                                <span>{{service}}</span>
+                            {% endfor %}
+                            
+                            </td>
                         <td><a href="teachers/{{teacher.id}}">ver</a></td>
+                        
                     </>
                     {% endfor %}
                 
