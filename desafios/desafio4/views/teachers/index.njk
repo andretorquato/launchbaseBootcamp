@@ -3,6 +3,7 @@
 {% block content %}
 
     <div class="card table-container">
+        <a href="teachers/create" class="button create">Criar</a>
         <table>
             <thead>
                 <tr>
@@ -24,9 +25,11 @@
                             {% endfor %}
                             
                             </td>
-                        <td><a href="teachers/{{teacher.id}}">ver</a></td>
+                        <td>
+                            <a href="teachers/{{teacher.id}}">ver</a>
+                        </td>
                         
-                    </>
+                    </tr>
                     {% endfor %}
                 
             </tbody>

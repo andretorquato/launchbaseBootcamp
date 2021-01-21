@@ -1,34 +1,4 @@
 {
-  "teachers": [
-    {
-      "id": "1",
-      "avatar_url": "https://avatars2.githubusercontent.com/u/44441254?s=460&u=9b9fad4dfdf539853131f359812f98f65be72205&v=4",
-      "name": "André Torquato Silva",
-      "birth": 1020124800000,
-      "graduation": "medio",
-      "typeClass": "distancia",
-      "services": "CodeDrops, Uniao Flasco",
-      "created_at": 1595187253603
-    },
-    {
-      "id": 2,
-      "avatar_url": "https://avatars2.githubusercontent.com/u/44441254?s=460&u=9b9fad4dfdf539853131f359812f98f65be72205&v=4",
-      "name": "Pedro",
-      "birth": 1027123200000,
-      "graduation": "doutorado",
-      "typeClass": "presencial",
-      "services": "Croosfit, ComidaFit, EletroFit",
-      "created_at": 1595187335371
-    },
-    {
-      "id": "3",
-      "avatar_url": "https://images.freeimages.com/images/large-previews/ca1/scsi-hd-1626366.jpg",
-      "name": "Augusto",
-      "birth": 964137600000,
-      "graduation": "superior",
-      "typeClass": "distancia",
-      "services": "Manufatura, Mesquinho",
-      "created_at": 1595188134134
-    }
-  ]
+  "students": [],
+  "teachers": []
 }

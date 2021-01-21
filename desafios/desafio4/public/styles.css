@@ -27,6 +27,10 @@ body {
     font-size: 24px;
     
 }
+.links a.active{
+    font-size: 27px;
+    font-weight: bold;
+}
 .links a + a{
     margin-left: 32px;
 }
@@ -157,6 +161,12 @@ a.button,
     box-shadow: 10px 3px 4px rgba(50, 79, 243, 0.589);
 
 }
+a.button.create{
+    display: inline-block;
+    width: 10%;
+    margin: 2% 0 0 5%;
+    
+}
 a.button:hover,
 .details button[type="submit"]:hover{
     box-shadow: 1px 3px 4px rgba(50, 79, 243, 0.589);
@@ -181,13 +191,13 @@ button[type="submit"].submit_button{
 /* === TABLE === */
 
 .table-container{
-    display: grid;
-    grid-template-columns: 100%;
-    padding: 40px;
+    display: flex;
+    flex-flow: column wrap;
     box-sizing: border-box;
 }
 .table-container table{
     border-spacing: 0;
+    width: 99%;
 }
 .table-container thead tr th{
     text-align: left;

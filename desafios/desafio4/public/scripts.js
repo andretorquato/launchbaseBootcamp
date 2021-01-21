@@ -1,12 +1,8 @@
-const modalOverlay = document.querySelector('.modal-overlay')
-const cards = document.querySelectorAll('.card')
-const images = document.querySelector('.cards')
-const modal = document.querySelector('.modal')
+const localePathname = location.pathname;
+const links = document.querySelectorAll('.links a');
 
-for(let card of cards){
-    card.addEventListener("click", function(){
-        const course = card.getAttribute('id')
-        window.location = `/contents/${course}`
-        
-    })
+for(link of links){
+    if(localePathname.includes(link.getAttribute('href'))){
+        link.classList.add('active');
+    }
 }

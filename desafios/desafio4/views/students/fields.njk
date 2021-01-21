@@ -1,0 +1,77 @@
+    <div class="item">
+        <div>Professor:</div>
+        <input 
+        type="url"
+        name="avatar_url"
+        placeholder="https://"
+        value="{{student.avatar_url}}"
+            >
+    </div>
+    <div class="item">
+        <div>Nome:</div>
+        <input 
+        type="text" 
+        name="name" 
+        placeholder="Nome do Professor"
+        value="{{student.name}}"
+        >
+    </div>
+    <div class="item">
+        <div>E-mail:</div>
+        <input 
+        type="email" 
+        name="email" 
+        value="{{student.email}}"
+        >
+    </div>
+    <div class="item">
+        <div>Data de nascimento:</div>
+        <input 
+        type="date" 
+        name="birth"
+        value="{{student.birth.iso}}"
+        >
+    </div>
+    <div class="item">
+        <div>Ano Escolar</div>
+        <select name="schoolYear">
+            <option 
+                value="3" 
+                {% if student.schoolYear == "3" %}
+                selected
+                {% endif %}
+            >3º Ano Fundamental
+            </option>
+            <option 
+                value="4"
+                {% if student.schoolYear == "4" %}
+                selected
+                {% endif %}
+            >4º Ano Fundamental
+            </option>
+            <option 
+                value="5"
+                {% if student.schoolYear == "5" %}
+                selected
+                {% endif %}
+            >5º Ano Fundamental
+            </option>
+            <option 
+                value="6"
+                {% if student.schoolYear == "6" %}
+                selected
+                {% endif %}
+            >6º Ano Fundamental
+            </option>
+        </select>
+    </div>
+    <div class="item">
+        <div>Carga horaria semanal:</div>
+        <input 
+        type="number" 
+        name="hours"
+        placeholder="Quantidade em horas"
+        value="{{student.hours}}"
+        >
+    </div>
+    <button  class="submit_button" type="submit">Salvar</button>
