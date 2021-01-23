@@ -1,0 +1,57 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <div class="card table-container">
+        <a href="students/create" class="button create">Criar</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome Completo</th>
+                    <th>E-mail</th>
+                    <th>Ano Escolar</th>
+                    <th>Ação</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                    {% for student in students %}
+                    <tr>
+                        <td>
+                            <span style="background-image:url({{student.avatar_url}})"></span>
+                            {{student.name}}
+                        </td>
+                        <td>
+                            {{student.email}}
+                        </td>
+                            <td>
+                        <div>
+                            {% if student.schoolYear == "3" %}
+                            3º Ano Fundamental
+                            {% endif %}
+                            </div>
+                        <div>
+                            {% if student.schoolYear == "4" %}
+                            4º Ano Fundamental
+                            {% endif %}
+                        </div>
+                        <div>
+                        {% if student.schoolYear == "5" %}
+                            5º Ano Fundamental
+                            {% endif %}
+                        </div>
+                        <div>
+                        {% if student.schoolYear == "6" %}
+                            6º Ano Fundamental
+                        {% endif %}
+                        </div>
+                            </td>
+                        <td><a href="students/{{student.id}}">ver</a></td>
+                        
+                    </>
+                    {% endfor %}
+                
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}
