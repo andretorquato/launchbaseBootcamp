@@ -16,16 +16,16 @@
             </div>
             <div class="item">
                 <div>Grau de Escolaridade:</div>
-                <div>{{teacher.graduation}}</div>
+                <div>{{teacher.education_level}}</div>
             </div>
             <div class="item">
                 <div>Tipo de aula:</div>
-                <div><span>{{ "Presencial" if teacher.typeClass == "presencial" else "A DISTÂNCIA"}}</span></div>
+                <div><span>{{ "Presencial" if teacher.class_type == "presencial" else "A DISTÂNCIA"}}</span></div>
             </div>
             <div class="item">
                 <div>Acompanhamento:</div>
                 <div>
-                    {% for teacher in teacher.services %}
+                    {% for teacher in teacher.subjects_taught %}
                     <span>{{teacher}}</span>
                     {% endfor %}
                 </div>

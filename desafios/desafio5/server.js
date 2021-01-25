@@ -25,7 +25,7 @@ nunjucks.configure('src/app/views',{
 })
 // message error page not found 
 server.use(function(req, res){
-    res.status(404).render("src/app/views/not-found")
+    res.status(404).render("not-found")
 })
 // starting server
 server.listen(5000, function(){

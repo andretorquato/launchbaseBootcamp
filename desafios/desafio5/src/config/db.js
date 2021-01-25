@@ -5,5 +5,5 @@ module.exports = new Pool({
     password: "andre",
     host: "localhost",
     port: 5432,
-    database: "teachers"
+    database: "launchbase"
 });
