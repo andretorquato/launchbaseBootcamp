@@ -13,24 +13,35 @@ module.exports = {
     });
   },
   create(req, res) {
-    return res.render("students/create");
+
+    students.teachersSelectOption(function (options) {
+      return res.render("students/create", { options});
+    });
+    
   },
   show(req, res) {
     students.find(req.params, function (student) {
       if (student == undefined) return res.status(404).render("not-found");
-  
+
       student.age = date(Date.parse(student.birth_date)).birthDay;
-      return res.render("students/show", { student });
+      
+      students.teachersSelectOption(function(options){
+        console.log(options);
+        return res.render("students/show", { student });
+      });
+
     });
   },
   edit(req, res) {
     students.find(req.params, function (student) {
       if (student == undefined) return res.status(404).render("not-found");
 
-      
       student.birth_date = date(Date.parse(student.birth_date)).iso;
 
-      return res.render("students/edit", { student });
+      students.teachersSelectOption(function (options) {
+        return res.render("students/edit", { student, options});
+      });
+      
     });
   },
   post(req, res) {
@@ -63,4 +74,5 @@ module.exports = {
       return res.redirect("/students");
     });
   },
+
 };

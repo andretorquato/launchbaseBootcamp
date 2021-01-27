@@ -9,6 +9,7 @@
                 <tr>
                     <th>Nome Completo</th>
                     <th>Acompanhamento</th>
+                    <th style="text-align: center;">Total de alunos</th>
                     <th>Ação</th>
                 </tr>
             </thead>
@@ -24,6 +25,9 @@
                                 <span>{{subjects_taught}}</span>
                             {% endfor %}
                             
+                            </td>
+                            <td style="text-align: center;">
+                                {{teacher.total_students}}
                             </td>
                         <td>
                             <a href="teachers/{{teacher.id}}">ver</a>

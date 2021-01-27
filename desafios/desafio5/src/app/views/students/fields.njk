@@ -74,4 +74,20 @@
         value="{{student.hours}}"
         >
     </div>
+     <div class="item">
+        <div>Professor:</div>
+        <select name="teacher_id">
+            {% for option in options %}
+            <option 
+                value="{{option.id}}" 
+                {% if option.id == student.teacher_id %}
+                selected
+                {% endif %}
+            >
+            {{option.name}}
+            </option>
+            {% endfor %}
+            
+        </select>
+    </div>
     <button  class="submit_button" type="submit">Salvar</button>
