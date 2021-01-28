@@ -3,14 +3,24 @@ const students = require("../models/students");
 
 module.exports = {
   index(req, res) {
-    students.all(function (students) {
-      for (student of students) {
-        
-        student.id = Number(student.id);
-      }
 
-      return res.render("students/index", { students });
-    });
+    const { filter } = req.query;
+    if( filter ){
+       students.findBy(filter, function(students){
+        
+        res.render('students/index', { students, filter });
+       });
+    }else{
+      students.all(function (students) {
+        for (student of students) {
+          
+          student.id = Number(student.id);
+        }
+  
+        return res.render("students/index", { students });
+      });
+    }
+  
   },
   create(req, res) {
 

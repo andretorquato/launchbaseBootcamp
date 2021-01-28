@@ -149,6 +149,7 @@ body {
     margin-right: 4px;
     cursor: pointer;
 }
+button.button,
 a.button,
 .details button[type="submit"]{
     width: 100%;
@@ -252,4 +253,30 @@ tbody tr td:nth-child(2) span{
     font-weight: bold;
     text-transform: uppercase;
     box-sizing: border-box;
+}
+
+.box.search{
+    margin: 2% 4%;
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    
+    gap: 28%;
+
+}
+
+.box.search form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: baseline;
+    
+    width: 40%;
+    grid-column: 3;
+}
+.box.search form input{
+    border: 1px solid #eee;
+    height: 60%;
+    box-sizing: border-box;
+    margin-right: 10%;
+    border-radius: 4px;
 }

@@ -3,7 +3,13 @@
 {% block content %}
 
     <div class="card table-container">
-        <a href="students/create" class="button create">Criar</a>
+           <div class="box search">
+            <a href="students/create" class="button">Criar</a>
+            <form action="/students" method="get">
+            <input type="text" name="filter" id="filter" placeholder="O que procura?" value="{{filter}}">
+            <button class="button" type="submit">Buscar</button>
+            </form>
+        </div>
         <table>
             <thead>
                 <tr>

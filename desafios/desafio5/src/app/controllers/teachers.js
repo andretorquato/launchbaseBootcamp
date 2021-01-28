@@ -3,14 +3,29 @@ const teachers = require("../models/teachers");
 
 module.exports = {
   index(req, res) {
-    teachers.all(function (teachers) {
-      for (teacher of teachers) {
-        teacher.subjects_taught = teacher.subjects_taught.split(",");
-        teacher.id = Number(teacher.id);
-      }
 
-      return res.render("teachers/index", { teachers });
-    });
+    const { filter } = req.query;
+  
+    if( filter ){
+      teachers.findBy(filter, function(teachers){
+        for (teacher of teachers) {
+          teacher.subjects_taught = teacher.subjects_taught.split(",");
+          teacher.id = Number(teacher.id);
+        }
+  
+        return res.render("teachers/index", { teachers, filter });
+      });
+    }else{
+      teachers.all(function (teachers) {
+        for (teacher of teachers) {
+          teacher.subjects_taught = teacher.subjects_taught.split(",");
+          teacher.id = Number(teacher.id);
+        }
+  
+        return res.render("teachers/index", { teachers });
+      });
+    }
+    
   },
   create(req, res) {
     return res.render("teachers/create");

@@ -57,6 +57,18 @@ module.exports = {
       }
     );
   },
+  findBy(filter, callback){
+    db.query(`
+      SELECT * FROM students
+      WHERE students.name ILIKE '%${filter}%'
+      GROUP BY students.id
+      ORDER BY students.id DESC
+    `, function (err, results) {
+      if(err) throw `DatabaseError ${err}`
+
+      callback(results.rows);
+    })
+  },
   update(data, callback) {
     const query = `
             UPDATE students SET
