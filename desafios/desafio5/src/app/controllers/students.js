@@ -3,43 +3,49 @@ const students = require("../models/students");
 
 module.exports = {
   index(req, res) {
+    let { filter, page, limit } = req.query;
+    
+    page = page || 1;
+    limit = limit || 2;
+    let offset = limit * ( page -1 );
 
-    const { filter } = req.query;
-    if( filter ){
-       students.findBy(filter, function(students){
-        
-        res.render('students/index', { students, filter });
-       });
-    }else{
-      students.all(function (students) {
-        for (student of students) {
-          
-          student.id = Number(student.id);
+
+    const params = {
+      page,
+      limit,
+      filter,
+      offset,
+      callback(students){
+
+        const pagination = {
+          total: Math.ceil(students[0].total / limit),
+          page
         }
-  
-        return res.render("students/index", { students });
-      });
-    }
-  
+
+        return res.render("students/index", { students, filter, pagination });
+      }
+    };
+
+    students.paginate(params);
+        
+    
+    
   },
   create(req, res) {
-
     students.teachersSelectOption(function (options) {
-      return res.render("students/create", { options});
+      return res.render("students/create", { options });
     });
-    
   },
   show(req, res) {
     students.find(req.params, function (student) {
       if (student == undefined) return res.status(404).render("not-found");
 
       student.age = date(Date.parse(student.birth_date)).birthDay;
+
+      students.teachersSelectOption(function (options) {
       
-      students.teachersSelectOption(function(options){
-        console.log(options);
         return res.render("students/show", { student });
       });
-
     });
   },
   edit(req, res) {
@@ -49,9 +55,8 @@ module.exports = {
       student.birth_date = date(Date.parse(student.birth_date)).iso;
 
       students.teachersSelectOption(function (options) {
-        return res.render("students/edit", { student, options});
+        return res.render("students/edit", { student, options });
       });
-      
     });
   },
   post(req, res) {
@@ -64,7 +69,7 @@ module.exports = {
     }
 
     students.create(req.body, function (student) {
-      return res.render("students", { student });
+      return res.redirect(`students/${student.id}`);
     });
   },
   update(req, res) {
@@ -84,5 +89,4 @@ module.exports = {
       return res.redirect("/students");
     });
   },
-
 };
