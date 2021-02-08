@@ -5,12 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mascaras Inputs</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="form">
+    <form action="POST">
+        <h1>Digite seu nome e CPF</h1>
+        <p>nome</p>
         <input type="text" name="name">
-        <input type="text" name="cpf">
+        <p>cpf</p>
+        <input 
+        type="text"
+        name="cpf" 
+        maxlength="14"
+        onkeydown="Mask.apply(this, 'formatCPF')"
+        >
+        <p>percentual</p>
+        <input 
+        type="text"  
+        name="percent"
+        maxlength="6"
+        onkeydown="Mask.apply(this, 'formatPercent')"
+        >
+        <button type="submit">Consultar</button>
+    </form>
     </input>
 </div>
+<script src="scripts.js"></script>
 </body>
 </html>
